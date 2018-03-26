@@ -107,8 +107,11 @@ export class LSelect2Component implements ControlValueAccessor {
         data = (e.type == 'select2:unselect') ? null : data[0];
       }
       if (this.control) {
+        if (this.control.value || this.initialValue) {
+          this.control.markAsDirty();
+        }
+
         this.control.setValue(data);
-        this.control.markAsDirty();
       }
       this._onChange(data);
     });
