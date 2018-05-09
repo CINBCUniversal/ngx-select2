@@ -6,7 +6,7 @@ import {
   Input,
   SimpleChanges,
   Renderer,
-  EventEmitter
+  EventEmitter,
   Output
 } from '@angular/core';
 import {
