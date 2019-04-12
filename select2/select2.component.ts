@@ -203,7 +203,9 @@ export class LSelect2Component implements ControlValueAccessor {
   }
 
   ngOnDestroy() {
-    this._jqueryElement.select2('destroy');
+    if (this._jqueryElement) {
+      this._jqueryElement.select2('destroy');
+    }
   }
 
   writeValue(value: any | Array<any>): void {
